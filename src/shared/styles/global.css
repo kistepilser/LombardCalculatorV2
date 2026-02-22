@@ -1,0 +1,88 @@
+/* ──────────────────────────────────────────────
+   Global Styles — Dark Luxury Theme
+   ────────────────────────────────────────────── */
+@import './tokens.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  color: var(--text-main);
+  position: relative;
+  overflow-x: hidden;
+  background: var(--bg-dark);
+}
+
+/* ─── SVG Background (falling jewelry) ──── */
+.svgBgContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ─── App Container ───────────────────────── */
+.appContainer {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 30px;
+  width: 100%;
+  max-width: 1340px;
+  align-items: start;
+  z-index: 1;
+  position: relative;
+}
+
+/* ─── Scrollbar ──────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ─── Selection ──────────────────────────── */
+::selection {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ─── Responsive ──────────────────────────── */
+@media (max-width: 1100px) {
+  .appContainer {
+    max-width: 100%;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .appContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  body { padding: 16px 8px; }
+  .appContainer { gap: 16px; }
+}
+
+@media (max-width: 400px) {
+  body { padding: 10px 6px; }
+}

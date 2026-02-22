@@ -1,0 +1,183 @@
+/* StoneRow — Dark Luxury Theme */
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.row:hover { background: rgba(255,255,255,0.05); }
+.content { flex: 1; min-width: 0; }
+.inputs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.glassInput {
+  width: 60px;
+  flex-shrink: 0;
+  height: 42px;
+  text-align: center;
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: var(--bg-input);
+  border: 1px solid rgba(255,255,255,0.06);
+  outline: none;
+  transition: 0.2s;
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+.glassInput:focus {
+  border-color: var(--accent);
+  background: var(--bg-input-focus);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+}
+.qtyInput {
+  composes: glassInput;
+  width: 48px !important;
+  background: rgba(201,168,76,0.06) !important;
+  color: var(--accent);
+}
+.btnRemove {
+  width: 42px;
+  height: 42px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: 0.2s;
+}
+.btnRemove:hover { background: rgba(255, 59, 48, 0.2); }
+
+/* Collapsed summary */
+.summary {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.collapsed .inputs { display: none; }
+.collapsed .summary { display: flex; }
+.summaryText {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.summaryIcon {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+.badgeQty {
+  background: rgba(255,255,255,0.06);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 8px;
+  color: var(--text-main);
+}
+.summaryResult {
+  margin-left: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+/* Add button */
+.btnAdd {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: rgba(201,168,76,0.08);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+.btnAdd:hover { background: rgba(201,168,76,0.15); }
+
+/* Section */
+.section { margin-bottom: 25px; }
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .row {
+    padding: 10px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+  .inputs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .inputs > div {
+    flex: 1 1 calc(50% - 4px) !important;
+    min-width: 100px;
+  }
+  .glassInput {
+    flex: 1;
+    min-width: 50px;
+    font-size: 12px;
+    height: 38px;
+  }
+  .qtyInput {
+    width: 42px !important;
+    height: 38px;
+    font-size: 12px;
+  }
+  .btnRemove {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    font-size: 18px;
+  }
+  .btnAdd {
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+  .sectionTitle {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .inputs > div {
+    flex: 1 1 100% !important;
+  }
+  .glassInput {
+    width: 100% !important;
+  }
+}

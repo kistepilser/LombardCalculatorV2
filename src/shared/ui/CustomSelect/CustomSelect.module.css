@@ -1,0 +1,78 @@
+/* CustomSelect dropdown — Dark Theme */
+.wrapper {
+  position: relative;
+  flex: 2;
+  min-width: 130px;
+}
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 42px;
+  background: var(--bg-input);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--text-main);
+}
+.trigger:hover { border-color: rgba(255,255,255,0.12); }
+.trigContent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.arrow {
+  transition: 0.3s;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+.arrowOpen { transform: rotate(180deg); }
+.options {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  min-width: 140px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: rgba(22, 22, 35, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+}
+.optionsOpen {
+  opacity: 1;
+  visibility: visible;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: 0.15s;
+  color: var(--text-main);
+}
+.option:hover,
+.optionHighlighted {
+  background: var(--accent);
+  color: #000;
+}
+.option:last-child { border-bottom: none; }
+.hidden { display: none; }
